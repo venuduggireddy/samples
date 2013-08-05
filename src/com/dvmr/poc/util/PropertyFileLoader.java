@@ -35,7 +35,7 @@ public class PropertyFileLoader {
 
 	public void loadProperties(String name) {
 		properties = new Properties();
-		InputStream in = this.getClass().getResourceAsStream("/com/dvmr/poc/resources/" + name + PROPERTIES_FILE);
+		InputStream in = this.getClass().getClassLoader().getResourceAsStream(name + PROPERTIES_FILE);
 		try {
 			properties.load(in);
 		} catch (IOException e) {
